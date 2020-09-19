@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package adafruit;
+
+service AHT20 {
+    rpc Get(google.protobuf.Empty) returns (AHT20Reply) {}
+}
+
+message AHT20Reply {
+    float temperature = 1;
+    float relative_humidity = 2;
+}
