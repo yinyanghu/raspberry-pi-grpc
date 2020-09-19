@@ -5,7 +5,7 @@ import "google/protobuf/empty.proto";
 package adafruit;
 
 service AHT20 {
-    rpc Get(google.protobuf.Empty) returns (AHT20Reply) {}
+    rpc Measure(google.protobuf.Empty) returns (AHT20Reply) {}
 }
 
 message AHT20Reply {
