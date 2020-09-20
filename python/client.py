@@ -1,4 +1,6 @@
+import ipaddress
 import logging
+import socket
 import sys
 
 import grpc
@@ -18,6 +20,13 @@ def run(server):
     print('Relative Humidity: {:.2f}%'.format(response.relative_humidity))
 
 
+def get_server_address(server):
+    try:
+        return ipaddress.ip_address(server)
+    except ValueError:
+        return socket.gethostbyname(server)
+
+
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING)
-    run(sys.argv[1])
+    run(get_server_address(sys.argv[1]))
