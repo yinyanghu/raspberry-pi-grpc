@@ -9,6 +9,7 @@ import adafruit_pb2
 import adafruit_pb2_grpc
 import common
 
+
 class AHT20Service(adafruit_pb2_grpc.AHT20Servicer):
     def __init__(self):
         self.sensor = adafruit_ahtx0.AHTx0(board.I2C())
@@ -17,6 +18,7 @@ class AHT20Service(adafruit_pb2_grpc.AHT20Servicer):
         return adafruit_pb2.AHT20Reply(
             temperature=self.sensor.temperature,
             relative_humidity=self.sensor.relative_humidity)
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=4))
