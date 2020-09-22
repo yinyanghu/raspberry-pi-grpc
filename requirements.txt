@@ -1,5 +1,6 @@
 grpcio_tools==1.32.0
 grpcio==1.32.0
-board==1.0
-protobuf==3.13.0
 adafruit-circuitpython-ahtx0==1.0.2
+Adafruit-Blinka==5.4.0
+adafruit-circuitpython-busdevice==5.0.1
+adafruit-circuitpython-register==1.9.0
